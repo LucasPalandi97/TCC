@@ -33,20 +33,20 @@ public class ChamadasTI {
       Integer userReg2 = CT.addusuario("Daisy", "ccc@ccc.com", "123","cliente",0);
       Integer userReg3 = CT.addusuario("John", "vvvv@vvv.com", "123","cliente",1);
 
-      /* List down all the employees */
+      /* List down all the users */
       CT.listusuario();
 
-      /* Update employee's records */
+      /* Update user's records */
       CT.updateusuario(userReg1, 5000);
 
-      /* Delete an employee from the database */
+      /* Delete a user from the database */
       CT.deleteusuario(userReg2);
 
-      /* List down new list of the employees */
+      /* List down new list of the users */
       CT.listusuario();
    }
    
-   /* Method to CREATE an employee in the database */
+   /* Method to CREATE a user in the database */
    public Integer addusuario(String nome, String email, String password , String funcao, int tipo){
       Session session = factory.openSession();
       Transaction tx = null;
@@ -55,7 +55,7 @@ public class ChamadasTI {
       try {
          tx = session.beginTransaction();
          usuario user = new usuario(nome, email, password, funcao, tipo);
-          = (Integer) session.save(usuario); 
+          userREG = (Integer) session.save(usuario); 
          tx.commit();
       } catch (HibernateException e) {
          if (tx!=null) tx.rollback();
@@ -63,10 +63,10 @@ public class ChamadasTI {
       } finally {
          session.close(); 
       }
-      return usuarioREG;
+      return userREG;
    }
    
-   /* Method to  READ all the employees */
+   /* Method to  READ all the users */
    public void listEmployees( ){
       Session session = factory.openSession();
       Transaction tx = null;
@@ -89,14 +89,14 @@ public class ChamadasTI {
       }
    }
    
-   /* Method to UPDATE password for an employee */
-   public void uptadeuser(Integer usuarioREG, String password ){
+   /* Method to UPDATE password for a user */
+   public void uptadeuser(Integer userREG, String password ){
       Session session = factory.openSession();
       Transaction tx = null;
       
       try {
          tx = session.beginTransaction();
-         usuario user = (usuario)session.get(usuario.class, usuarioREG); 
+         usuario user = (usuario)session.get(usuario.class, userREG); 
          user.setPassword(password);
 		 session.update(user); 
          tx.commit();
@@ -108,14 +108,14 @@ public class ChamadasTI {
       }
    }
    
-   /* Method to DELETE an employee from the records */
-   public void deleteEmployee(Integer usuarioREG){
+   /* Method to DELETE a user from the records */
+   public void deleteusuario(Integer userREG){
       Session session = factory.openSession();
       Transaction tx = null;
       
       try {
          tx = session.beginTransaction();
-         usuario user = (usuario)session.get(usuario.class, usuarioREG); 
+         usuario user = (usuario)session.get(usuario.class, userREG); 
          session.delete(user); 
          tx.commit();
       } catch (HibernateException e) {
