@@ -10,12 +10,16 @@ package chamadasti;
  * @author lucas
  */
 public class usuario {
-    private int registro;
+   private int registro;
    private String nome; 
    private String email; 
    private String password;
    private String funcao;
    private int tipo; 
+
+    public usuario(String nome, String email, String password, String funcao, int tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     public String getFuncao() {
         return funcao;

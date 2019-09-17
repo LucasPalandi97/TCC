@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name = "Employee" table = "EMPLOYEE">
+      
+        <meta attribute = "class-description">
+            This class contains the Chamadas detail. 
+        </meta>
+      
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+        <property name = "Categoria" column = "cat" type = "string"/>
+        <property name = "Subcategoria" column = "subcat" type = "string"/>
+        <property name = "SLA do chamado" column = "sla" type = "string"/>
+        <property name = "Data" column = "dat" type = "datatype"/>
+        <property name = "Satus" column = "stats" type = "int"/>
+        <property name = "Descrição(Título)" column = "titulo" type = "string"/>
+        <property name = "Descrição" column = "descricao" type = "string"/>
+        <property name = "Prioridade" column = "prioridade" type = "int"/>
+        <property name = "Numero de série" column = "serie" type = "string"/>
+        <property name = "Tipo" column = "tipo" type = "int"/>
+          
+      
+    </class>
+</hibernate-mapping>
