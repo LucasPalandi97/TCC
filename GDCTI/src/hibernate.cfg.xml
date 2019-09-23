@@ -41,28 +41,24 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-      <property name = "hibernate.dialect">
+    <property name="hibernate.dialect">
          org.hibernate.dialect.MySQLDialect
       </property>
-      
-      <property name = "hibernate.connection.driver_class">
+    <property name="hibernate.connection.driver_class">
          com.mysql.jdbc.Driver
       </property>
-      
-      <!-- Assume test is the database name -->
-      
-      <property name = "hibernate.connection.url">
+    <!-- Assume test is the database name -->
+    <property name="hibernate.connection.url">
          jdbc:mysql://localhost/gdcti
       </property>
-      
-      <property name = "hibernate.connection.username">
+    <property name="hibernate.connection.username">
          root
       </property>
-      
-      <property name = "hibernate.connection.password">
+    <property name="hibernate.connection.password">
          admin
       </property>
-      
-  <mapping resource = "Usuario.hbm.xml"/>
-    </session-factory>
+    <mapping resource="Usuario.hbm.xml"/>
+    <mapping resource="Requisicao.hbm.xml"/>
+    <mapping resource="Incidente.hbm.xml"/>
+  </session-factory>
 </hibernate-configuration>

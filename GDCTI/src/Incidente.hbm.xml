@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "Incidente" table = "incidente">
+      
+      <meta attribute = "class-description">
+         Detalhes das requisicoes
+      </meta>
+      
+      <id name = "id" type = "int" column = "id">
+         <generator class="native"/>
+      </id>
+      
+      <property name = "tipo" column = "tipo" type = "int"/>
+        <property name = "prioridade" column = "prioridade" type = "int"/>
+      <property name = "categoria" column = "categoria" type = "string"/>
+      <property name = "subcategoria" column = "subcategoria" type = "string"/>
+      <property name = "data" column = "data" type = "string"/>
+      <property name = "sla" column = "sla" type = "string"/>
+       <property name = "titulo" column = "titulo" type = "string"/>
+        <property name = "descricao" column = "descricao" type = "string"/>
+        <property name = "serie" column = "serie" type = "string"/>
+         <property name = "status" column = "status" type = "int"/>
+      
+   </class>
+</hibernate-mapping>
