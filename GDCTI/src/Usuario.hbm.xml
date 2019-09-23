@@ -4,13 +4,13 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "usuario" table = "user">
+   <class name = "Usuario" table = "user">
       
       <meta attribute = "class-description">
-         This class contains the user detail. 
+         Detalhes do usuario
       </meta>
       
-      <id name = "registro" type = "int" column = "registro">
+      <id name = "id" type = "int" column = "id">
          <generator class="native"/>
       </id>
       

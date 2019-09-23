@@ -10,17 +10,23 @@
  * @author lucas
  */
 public class Usuario {
-   private int registro;
+
+   private int id;
    private String nome; 
-   private String email; 
+   private String email;   
    private String password;
    private String funcao;
-   private int tipo; 
+   private int tipo;  
 
-    public Usuario(String nome, String email, String password, String funcao, int tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-   
+   public Usuario() {}
+   public Usuario(String nome, String email, String password, String funcao, int tipo) {
+      this.nome = nome;
+      this.email = email;
+      this.password = password;
+      this.funcao = funcao;
+      this.tipo = tipo;
+   }
+
     public String getFuncao() {
         return funcao;
     }
@@ -29,14 +35,14 @@ public class Usuario {
         this.funcao = funcao;
     }
 
-
-    public int getRegistro() {
-        return registro;
-    }
-
-    public void setRegistro(int registro) {
-        this.registro = registro;
-    }
+  
+   public int getId() {
+      return id;
+   }
+   
+   public void setId( int id ) {
+      this.id = id;
+   }
 
     public String getNome() {
         return nome;
@@ -54,14 +60,6 @@ public class Usuario {
         this.email = email;
     }
 
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -69,7 +67,15 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
    
-   
-   
+  
 }
+
