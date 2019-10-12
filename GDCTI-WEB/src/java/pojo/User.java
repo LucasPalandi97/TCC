@@ -6,25 +6,25 @@
 package pojo;
 
 public class User {
- private String login;
- private String senha;
+ private String username;
+ private String password;
  private String name;
  private String funcao;
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -43,12 +43,9 @@ public class User {
         this.funcao = funcao;
     }
 
-
-
+  
  @Override
  public String toString() {
-  return "User [username=" + login + ", password=" + senha
-    + ", Name=" + name 
-    + ", função= "+ funcao +"]";
+  return "User [username=" + username + ", password=" + password + ", Name=" + name + ", função= "+ funcao +"]";
  }
 }

@@ -24,7 +24,7 @@ public class BaseDaoImpl implements BaseDao {
   if (session != null) {
    try {
     User user = (User) session.get(User.class, username);
-    if (password.equals(user.getSenha())) {
+    if (password.equals(user.getPassword())) {
      System.out.println("User: " + user.toString());
      return true;
     }

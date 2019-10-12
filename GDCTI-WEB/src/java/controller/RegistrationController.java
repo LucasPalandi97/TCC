@@ -43,8 +43,8 @@ public class RegistrationController extends HttpServlet {
   String page = "userRegistration.jsp";
   if(request.getParameter("password").equals(request.getParameter("confPassword"))){
    User user = new User();
-   user.setLogin(request.getParameter("username"));
-   user.setSenha(request.getParameter("password"));
+   user.setUsername(request.getParameter("username"));
+   user.setPassword(request.getParameter("password"));
    user.setName(request.getParameter("name"));
    
    
