@@ -4,14 +4,16 @@
 <html>
 
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+         <meta http-equiv="Content-Language" content="pt-br">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="ISO-8859-1">
         <title>Login - HELPER</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="scss/main.css">
-        <link rel="stylesheet" href="scss/skin.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/skin.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -28,6 +30,7 @@
 
                         <a class="navbar-brand" href="#">
                             <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
+                      
                     </div>
 
                     <!--/.nav-collapse -->
@@ -77,7 +80,7 @@
                                     </div>
                                     <div class="input-group form-group">
                                         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
-                                        <input type="text" name="password" required="required" class="form-control" placeholder="Senha" aria-describedby="basic-addon1">
+                                        <input type="password" name="password" required="required" class="form-control" placeholder="Senha" aria-describedby="basic-addon1">
                                     </div>
                                     <button type="submit" class="btn">Entrar!</button>
                                 </form>

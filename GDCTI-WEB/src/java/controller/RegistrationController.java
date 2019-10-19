@@ -46,7 +46,8 @@ public class RegistrationController extends HttpServlet {
    user.setUsername(request.getParameter("username"));
    user.setPassword(request.getParameter("password"));
    user.setName(request.getParameter("name"));
-   
+   user.setFuncao(request.getParameter("funcao"));
+  
    
    System.out.println(user.toString());
    BaseDao baseDao = new BaseDaoImpl();
