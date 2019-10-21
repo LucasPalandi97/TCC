@@ -14,8 +14,8 @@
     <title>Chamado criado</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="scss/main.css">
-    <link rel="stylesheet" href="scss/skin.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skin.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -44,10 +44,10 @@
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
                             
-                            <li><a href="features.html">Início</a></li>
-                            <li><a href="about.html">Requisição</a></li>
-                            <li><a href="portfolio.html">Incidentes</a></li>                   
-                            <li><a href="registration.html">Sair</a></li>
+                            <li><a href="home.jsp">Início</a></li>
+                            <li><a href="requisicao.jsp">Requisição</a></li>
+                            <li><a href="incidentes.jsp">Incidentes</a></li>                   
+                            <li><a href="login.jsp">Sair</a></li>
                         </ul>
                     </div>
                 <!--/.nav-collapse -->
@@ -88,7 +88,16 @@
     </div>
 	<div class="final">
 	<div class="alerta">
-	
+	  <% if (request.getAttribute("msg") != null) {%>
+                                <p style="color: red">
+                                    <%= request.getAttribute("msg")%>
+                                </p>
+                                <% } %>
+                                <% if (request.getAttribute("msg2") != null) {%>
+                                <p style="color: green;">
+                                    <%= request.getAttribute("msg2")%>
+                                </p>
+                                <% }%>
 	<p><img src="img/confirmado.png" width=42 height=42>  Chamado <span></span> criado com sucesso!</p>
 	</div>
 	

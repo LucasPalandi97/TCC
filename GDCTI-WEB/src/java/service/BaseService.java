@@ -7,10 +7,13 @@ package service;
 
 
 
+import pojo.Requisicao;
 import pojo.User;
 
 public interface BaseService {
  public boolean login(String username, String password);
 
  public String registration(User user);
+ 
+  public String registration(Requisicao req);
 }

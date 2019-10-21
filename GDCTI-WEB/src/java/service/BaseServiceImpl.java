@@ -6,6 +6,7 @@
 package service;
 import dao.BaseDao;
 import dao.BaseDaoImpl;
+import pojo.Requisicao;
 import pojo.User;
 
 public class BaseServiceImpl implements BaseService {
@@ -20,6 +21,11 @@ public class BaseServiceImpl implements BaseService {
  @Override
  public String registration(User user) {
   return loginDao.register(user);
+ }
+ 
+  @Override
+ public String registration(Requisicao req) {
+  return loginDao.register(req);
  }
 
 }

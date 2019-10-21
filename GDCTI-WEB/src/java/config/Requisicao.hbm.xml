@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="pojo.Requisicao" table="requisicao">
+  <id name="id">
+   <column name="id" length="11" />
+  </id>
+  <property name="tipo" column="tipo" length="45" />
+  <property name="data" column="data" length="45" />
+  <property name="categoria" column="categoria" length="45" />
+  <property name="subcategoria" column="subcategoria" length="45" />
+  <property name="prioridade" column="prioridade" length="1" />
+  <property name="titulo" column="titulo" length="80" />
+  <property name="descricao" column="descricao" length="1000" />
+  <property name="status" column="status" length="1" />
+
+ 
+ </class>
+</hibernate-mapping>

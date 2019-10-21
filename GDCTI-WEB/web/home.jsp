@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <%
                                     String userName = null;
+                                    
                                     Cookie[] cookies = request.getCookies();
                                     if (cookies != null) {
                                         for (Cookie cookie : cookies) {
                                             if (cookie.getName().equals("username")) {
+                                             
                                                 userName = cookie.getValue();
                                             }
                                         }
@@ -48,7 +50,7 @@
                         <a class="navbar-brand" href="#">
                             <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
 							<div class="boasvindas">
-							<label  value="NomeUser" >Olá, <%=userName%> <h1></h1></label>
+                                                            <label  value="NomeUser" >Olá, <%=userName%><h1></h1></label>
 							</div>
                     </div>
 					
@@ -58,12 +60,10 @@
                             
                             <li><a href="home.jsp">Início</a></li>
                             <li><a href="requisicao.jsp">Requisição</a></li>
-                            <li><a href="incidentes.jsp">Incidentes</a></li>   
-                            <li><a href="userRegistration.jsp">Cadastrar Usuário</a></li>
-                          
-	<form action="${pageContext.request.contextPath}/logout" method="post">
-    <input type="submit" value="Logout" />
-</form>								
+                            <li><a href="incidentes.jsp">Incidentes</a></li>                              
+                            <li><a href="login.jsp">Sair</a></li>
+                            <li><a href="userRegistration.jsp">Cadastrar Usuário (ADM)</a></li>
+                         							
                         </ul>
                                
                     </div>

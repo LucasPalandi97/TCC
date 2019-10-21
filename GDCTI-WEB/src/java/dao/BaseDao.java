@@ -5,10 +5,13 @@
  */
 package dao;
 
+import pojo.Requisicao;
 import pojo.User;
 
 public interface BaseDao {
  public boolean login(String username, String password);
 
  public String register(User user);
+ 
+ public String register(Requisicao req);
 }

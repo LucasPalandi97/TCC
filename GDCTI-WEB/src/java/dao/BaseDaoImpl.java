@@ -12,7 +12,7 @@ package dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+import pojo.Requisicao;
 import pojo.User;
 import util.HibernateUtil;
 
@@ -54,6 +54,30 @@ public class BaseDaoImpl implements BaseDao {
     }
    } catch (Exception exception) {
     System.out.println("Exception occred while reading user data: "
+      + exception.getMessage());
+   }
+
+  } else {
+   System.out.println("DB server down.....");
+  }
+  System.out.println("msg:" + msg);
+  return msg;
+ }
+ 
+ @Override
+ public String register(Requisicao req) {
+  String msg = "Registration unsuccessful, try again.....";
+  Session session = HibernateUtil.getSession();
+  if (session != null) {
+   try {
+    if (req != null) {
+     Integer id = (Integer) session.save(req);
+     session.beginTransaction().commit();
+     msg = "Requisicao " + id
+       + " created successfully...";
+    }
+   } catch (Exception exception) {
+    System.out.println("Exception occred while reading requisicao data: "
       + exception.getMessage());
    }
 
