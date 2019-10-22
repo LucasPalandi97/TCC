@@ -53,7 +53,7 @@
                             
                             <li><a href="home.jsp">Início</a></li>
                             <li><a href="requisicao.jsp">Requisição</a></li>
-                            <li><a href="incidentes.jsp">Incidentes</a></li>                   
+                            <li><a href="incidente.jsp">Incidentes</a></li>                   
                             <li><a href="login.jsp">Sair</a></li>
                         </ul>
                     </div>
@@ -80,7 +80,7 @@
                        
                         <div class="form-group">
                             <label>Título *</label>
-                            <input type="text" name="subject" class="form-control" name="titulo" required="required">
+                            <input type="text" class="form-control" name="titulo" required="required">
                         </div>
 						
 						</div>
@@ -93,7 +93,8 @@
 							<option value="Hardware">Hardware</option>
 							<option value="Software">Software</option>
 							<option value="Rede">Rede</option>
-							<option value="valor4" selected></option>
+                                                        <option value="Outros">Outros</option>
+							<option value="" selected></option>
 							</select>
 
                         </div>
@@ -102,12 +103,13 @@
 
 							<select id="subcatOpt" name="subcatOpt" class="form-control" required="required">
 							
-							<option value="Compra de equipamento">Compra de equipamento</option>
-							<option value="Instalação de software">Instalação de software</option>
-							<option value="Realocação de equipamento">Realocação de equipamento</option>
+							<option value="Compra">Compra</option>
+							<option value="Instalação">Instalação</option>
+							<option value="Realocação">Realocação</option>
+                                                        <option value="Manutenção">Manutenção</option>
 							<option value="Criação de e-mail">Criação de e-mail</option>
 							<option value="Outros">Outros</option>
-							<option value="valor6" selected></option>
+							<option value="" selected></option>
 							</select>
 
                         </div>

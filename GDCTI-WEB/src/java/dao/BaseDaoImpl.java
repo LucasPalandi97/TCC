@@ -12,6 +12,7 @@ package dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
 import util.HibernateUtil;
@@ -65,15 +66,41 @@ public class BaseDaoImpl implements BaseDao {
  }
  
  @Override
- public String register(Requisicao req) {
+ public String registerR(Requisicao req) {
   String msg = "Registration unsuccessful, try again.....";
   Session session = HibernateUtil.getSession();
   if (session != null) {
    try {
     if (req != null) {
-     Integer id = (Integer) session.save(req);
+     Integer id = (Integer)session.save(req) ;
+     String tipo = req.getTipo();
      session.beginTransaction().commit();
-     msg = "Requisicao " + id
+     msg = "Requisicao #" + tipo + id
+       + " created successfully...";
+    }
+   } catch (Exception exception) {
+    System.out.println("Exception occred while reading requisicao data: "
+      + exception.getMessage());
+   }
+
+  } else {
+   System.out.println("DB server down.....");
+  }
+  System.out.println("msg:" + msg);
+  return msg;
+ }
+ 
+  @Override
+ public String registerI(Incidente inc) {
+  String msg = "Registration unsuccessful, try again.....";
+  Session session = HibernateUtil.getSession();
+  if (session != null) {
+   try {
+    if (inc != null) {
+     Integer id = (Integer)session.save(inc) ;
+     String tipo = inc.getTipo();
+     session.beginTransaction().commit();
+     msg = "Incidente #" + tipo + id
        + " created successfully...";
     }
    } catch (Exception exception) {

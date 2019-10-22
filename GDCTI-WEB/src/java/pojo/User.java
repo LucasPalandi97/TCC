@@ -10,6 +10,24 @@ public class User {
  private String password;
  private String name;
  private String funcao;
+ private String email;
+ private int telefone;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
 
     public String getUsername() {
         return username;
@@ -46,6 +64,7 @@ public class User {
   
  @Override
  public String toString() {
-  return "User [username=" + username + ", password=" + password + ", name=" + name + ", funcao= "+ funcao +"]";
+  return "User [username=" + username + ", password=" + password + ", name=" + name +
+          ", funcao= "+ funcao +", email= " + email + ", telefone= " + telefone + "]" ;
  }
 }

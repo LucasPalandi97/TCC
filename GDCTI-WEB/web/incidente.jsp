@@ -60,7 +60,7 @@
                             
                             <li><a href="home.jsp">Início</a></li>
                             <li><a href="requisicao.jsp">Requisição</a></li>
-                            <li><a href="incidentes.jsp">Incidentes</a></li>                   
+                            <li><a href="incidente.jsp">Incidentes</a></li>                   
                             <li><a href="login.jsp">Sair</a></li>
                         </ul>
                     </div>
@@ -78,25 +78,21 @@
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="IncRegistration">
                     <div class="col-sm-5 col-sm-offset-1">
                        
 						<div class="form-group">
                             <label>Data *</label>
-                            <input type="text" class="form-control" required="required">
+                            <input type="text" name="data" class="form-control" required="required">
                         </div>
-                        <div class="form-group">
-                            <label>Setor</label>
-                            <input type="text" class="form-control">
-                        </div>
-
+                     
                         <div class="form-group">
                             <label>Título *</label>
-                            <input type="text" name="subject" class="form-control" required="required">
+                            <input type="text" name="titulo" class="form-control" required="required">
                         </div>
 						<div class="form-group">
                             <label>Número de série (Computadores e Periféricos)</label>
-                            <input type="text" name="subject" class="form-control">
+                            <input type="text" name="serie" class="form-control">
                         </div>
 						
 						</div>
@@ -104,54 +100,51 @@
 						<div class="form-group">
                             <label>Categoria *</label>
 
-							<select class="form-control" required="required">
+							<select name="catOpt2" id="catOpt" class="form-control" required="required">
 							
-							<option value="valor1">Hardware</option>
-							<option value="valor2">Software</option>
-							<option value="valor3">Rede</option>
-							<option value="valor4" selected></option>
+							<option value="Hardware">Hardware</option>
+							<option value="Software">Software</option>
+							<option value="Rede">Rede</option>
+                                                        <option value="Outros">Outros</option>
+							<option value="" selected></option>
 							</select>
 
                         </div>
 						<div class="form-group">
                             <label>Subcategoria *</label>
 
-							<select class="form-control" required="required">
+							<select name="subcatOpt2" id="subcatOpt2" class="form-control" required="required">
 							
-							<option value="valor1">Conexão de internet/wi-fi</option>
-							<option value="valor2">Telefone</option>
-							<option value="valor3">Quebra de equipamentos</option>
-							<option value="valor4">Falha de equipamentos</option>
-							<option value="valor5">Erro de software</option>
-							<option value="valor6">Impressora</option>
-							<option value="valor7">Outros</option>
-							<option value="valor8" selected></option>
+							<option value="Conexão de internet/wi-fi">Conexão de internet/wi-fi</option>
+							<option value="Telefone">Telefone</option>
+							<option value="Quebra de equipamentos">Quebra de equipamentos</option>
+							<option value="Falha de equipamentos">Falha de equipamentos</option>
+							<option value="Erro de autenticação">Erro de autenticação</option>
+							<option value="Impressora">Impressora</option>
+							<option value="Outros">Outros</option>
+							<option value="" selected></option>
 							</select>
 
-                        </div>
-						<div class="form-group">
-                            <label>Outros (Subcategoria) *</label>
-                            <input type="text" name="subject" class="form-control" required="required">
-                        </div>
+                        </div>					
 						
 						<div class="form-group">
                             <label>Prioridade *</label>
-                            <select class="form-control" required="required">
+                            <select nome="priOpt2" id="priOpt2" class="form-control" required="required">
 							
-							<option value="valor1">Muito alta</option>
-							<option value="valor2">Alta</option>
-							<option value="valor3">Média</option>
-							<option value="valor4">Baixa</option>
-							<option value="valor5"selected>Muito baixa</option>
+							<option value="1">Muito alta</option>
+							<option value="2">Alta</option>
+							<option value="3">Média</option>
+							<option value="4">Baixa</option>
+							<option value="5"selected>Muito baixa</option>
 							</select>
 							
                         </div>
                         <div class="form-group">
                             <label>Descrição da requisição *</label>
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                            <textarea name="descricao" id="message" required="required" class="form-control" rows="8"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-default submit-button">Enviar chamado <i class="fa fa-caret-right"></i></button>
+                            <button type="submit" name="submit" value="Register Incidente" class="btn btn-default submit-button">Enviar chamado <i class="fa fa-caret-right"></i></button>
                         </div>
                     </div>
                 </form>

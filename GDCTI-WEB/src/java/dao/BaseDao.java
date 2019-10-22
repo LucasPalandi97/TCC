@@ -5,6 +5,7 @@
  */
 package dao;
 
+import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
 
@@ -13,5 +14,7 @@ public interface BaseDao {
 
  public String register(User user);
  
- public String register(Requisicao req);
+ public String registerR(Requisicao req);
+ 
+  public String registerI(Incidente inc);
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.io.IOException;
@@ -14,17 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDao;
 import dao.BaseDaoImpl;
-import pojo.Requisicao;
+import pojo.Incidente;
 
 
 
-public class RequisicaoController extends HttpServlet {
+public class IncidenteController extends HttpServlet {
  private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RequisicaoController() {
+    public IncidenteController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +28,7 @@ public class RequisicaoController extends HttpServlet {
   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
   */
  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  response.sendRedirect("requisicao.jsp");
+  response.sendRedirect("incidente.jsp");
  }
 
  /**
@@ -41,24 +36,25 @@ public class RequisicaoController extends HttpServlet {
   */
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   String msg = null;
-  String page = "requisicao.jsp";
+  String page = "incidente.jsp";
   
-   Requisicao req = new Requisicao();
+   Incidente inc = new Incidente();
+  
+   inc.setData(request.getParameter("data"));
+   inc.setCategoria(request.getParameter("catOpt2"));
+   inc.setSubcategoria(request.getParameter("subcatOpt2"));
+   inc.setPrioridade(Integer.parseInt(request.getParameter("priOpt2")));
+   inc.setTitulo(request.getParameter("titulo"));
+   inc.setDescricao(request.getParameter("descricao"));
+   inc.setSerie(request.getParameter("serie"));
+   inc.setStatus(1);
+   inc.setTipo("INC");
+  
+  
    
-   req.setData(request.getParameter("data"));
-   req.setCategoria(request.getParameter("catOpt"));
-   req.setSubcategoria(request.getParameter("subcatOpt"));
-   req.setPrioridade(Integer.parseInt(request.getParameter("priOpt")));
-   req.setTitulo(request.getParameter("titulo"));
-   req.setDescricao(request.getParameter("descricao"));
-   req.setStatus(1);
-   req.setTipo("REQ");
-  
-  
-   
-   System.out.println(req.toString());
+   System.out.println(inc.toString());
    BaseDao baseDao = new BaseDaoImpl();
-   msg = baseDao.registerR(req);
+   msg = baseDao.registerI(inc);
    page = "ChamadoCriadoSucesso.jsp";
   
   request.setAttribute("msg2", msg);

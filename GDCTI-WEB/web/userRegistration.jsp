@@ -41,8 +41,20 @@
                                 </tr>
                                 <tr>
 					<td>Função* :</td>
-					<td><input type="text" name="funcao" required></td>
-				</tr>	
+					<td><select id="funcao" name="funcao" required>
+                                        <option value="analista">Analista</option>
+                                        <option value="funcionario">Funcionário</option>
+                                        <option value="adm">Administrador</option>
+                                        </select></td>
+				</tr>
+                                				<tr>
+					<td>E-mail* :</td>
+					<td><input type="text" name="email" required></td>
+                                </tr>
+                                <tr>
+					<td>Telefone* :</td>
+					<td><input type="number" name="telefone" required></td>
+				</tr>
 				<tr>
 					<td align="center"><input type="submit" value="Register User"></td>
 					<td align="center"><input type="reset" name="Reset Form"></td>

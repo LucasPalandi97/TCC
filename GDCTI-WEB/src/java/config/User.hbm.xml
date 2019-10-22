@@ -10,7 +10,8 @@
   <property name="password" column="password" length="30" />
   <property name="name" column="name" length="45" />
   <property name="funcao" column="funcao" length="12" />
+  <property name="email" column="email" length="50" />
+  <property name="telefone" column="telefone" length="12" />
 
- 
  </class>
 </hibernate-mapping>

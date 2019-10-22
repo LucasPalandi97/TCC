@@ -46,7 +46,7 @@
                             
                             <li><a href="home.jsp">Início</a></li>
                             <li><a href="requisicao.jsp">Requisição</a></li>
-                            <li><a href="incidentes.jsp">Incidentes</a></li>                   
+                            <li><a href="incidente.jsp">Incidentes</a></li>                   
                             <li><a href="login.jsp">Sair</a></li>
                         </ul>
                     </div>

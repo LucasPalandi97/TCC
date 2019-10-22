@@ -1,24 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pojo;
+
+
 
 /**
  *
  * @author lucas
  */
 
-public class Requisicao {
+public class Incidente {
 
 
     
     private int id, prioridade, status;
-    private String tipo, data, categoria, subcategoria, titulo, descricao;
+    private String tipo, data, categoria, subcategoria, titulo, descricao, serie;
 
     public int getId() {
         return id;
+    }
+
+    public String getSerie() {
+        return serie;
+    }
+
+    public void setSerie(String serie) {
+        this.serie = serie;
     }
 
     public void setId(int id) {
@@ -92,6 +97,6 @@ public class Requisicao {
     @Override
     public String toString() {
         return "User [id=" + id + ", tipo=" + tipo + ", data=" + data + ", prioridade= " + prioridade + ", categoria= " + categoria
-                + ", subcategoria= " + subcategoria + ", titulo= " + titulo + ", descricao= " + descricao + ", status= " + status + "]";
+                + ", subcategoria= " + subcategoria + ", titulo= " + titulo + ", descricao= " + descricao + ", serie= " + serie + ", status= " + status + "]";
     }
 }

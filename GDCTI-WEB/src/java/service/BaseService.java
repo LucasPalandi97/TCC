@@ -7,6 +7,7 @@ package service;
 
 
 
+import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
 
@@ -15,5 +16,7 @@ public interface BaseService {
 
  public String registration(User user);
  
-  public String registration(Requisicao req);
+  public String registrationR(Requisicao req);
+  
+  public String registrationI(Incidente inc);
 }

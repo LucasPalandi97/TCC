@@ -30,6 +30,15 @@
   <servlet-name>RequisicaoRegistration</servlet-name>
   <url-pattern>/ReqRegistration</url-pattern>
  </servlet-mapping>
+  <servlet>  
+  <servlet-name>IncidenteRegistration</servlet-name>
+  <servlet-class>controller.IncidenteController</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>IncidenteRegistration</servlet-name>
+  <url-pattern>/IncRegistration</url-pattern>
+ </servlet-mapping>
  <welcome-file-list>
   <welcome-file>login.jsp</welcome-file>
  </welcome-file-list>
