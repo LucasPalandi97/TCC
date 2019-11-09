@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.util.List;
 import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
@@ -16,5 +17,7 @@ public interface BaseDao {
  
  public String registerR(Requisicao req);
  
-  public String registerI(Incidente inc);
+ public String registerI(Incidente inc);
+  
+
 }

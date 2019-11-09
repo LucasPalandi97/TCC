@@ -118,11 +118,11 @@
                             <label>Prioridade *</label>
                             <select id="priOpt" name="priOpt" class="form-control" required="required">
 							
-							<option value="1">Muito alta</option>
-							<option value="2">Alta</option>
-							<option value="3">Média</option>
-							<option value="4">Baixa</option>
-							<option value="5"selected>Muito baixa</option>
+							<option value=1>Muito alta</option>
+							<option value=2>Alta</option>
+							<option value=3>Média</option>
+							<option value=4>Baixa</option>
+							<option value=5 selected>Muito baixa</option>
 							</select>
 							
                         </div>

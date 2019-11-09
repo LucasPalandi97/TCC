@@ -5,7 +5,7 @@
 <hibernate-mapping>
  <class name="pojo.Requisicao" table="requisicao">
   <id name="id">
-   <column name="id" length="11" />
+   <column name="id" length="11"  />
   </id>
   <property name="tipo" column="tipo" length="45" />
   <property name="data" column="data" length="45" />

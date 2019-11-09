@@ -73,14 +73,5 @@ public class LoginController extends HttpServlet {
         }
         request.getRequestDispatcher(page).include(request, response);
     }
-    
-    public class LogoutServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getSession().invalidate();
-        response.sendRedirect(request.getContextPath() + "login.jsp");
-    }
-
-}
+ 
 }

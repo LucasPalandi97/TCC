@@ -16,6 +16,7 @@
                                         response.sendRedirect("login.jsp");
                                     }
                                 %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -62,15 +63,15 @@
                             
                             <li><a href="home.jsp">Início</a></li>
                             <li><a href="requisicao.jsp">Requisição</a></li>
-                            <li><a href="incidente.jsp">Incidentes</a></li>                              
-                            <li><a href="login.jsp">Sair</a></li>
+                            <li><a href="incidente.jsp">Incidentes</a></li>                                                         
                             <li><a href="userRegistration.jsp">Cadastrar Usuário (ADM)</a></li>
-                         							
+                            <li><form action="logout" method="post">
+                                    <input style="margin-left: 50%" name="submit" class="btn btn-default submit-button" type="submit" value="Sair">
+                                                        </form>				
                         </ul>
                                
                     </div>
-					
-                    <!--/.nav-collapse -->
+                                                      
                 </div>
 				
             </div>
@@ -114,7 +115,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
+                <form action="consultaRequisicao" method="post">
+                    <div align="center">
+                    <td align="center"><input name="submit" class="btn btn-default submit-button" type="submit" value="Requisições"></td>
+                    <td align="center"><input name="submit" class="btn btn-default submit-button" type="submit" value="Incidentes"></td>
+                    </div>
+                    <br>
+                <c:forEach var="itemReq" items="${listRequisicao}"  > 
+              
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
                     <div class="portfolio-one">
                         <div class="portfolio-head">
                             <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
@@ -123,163 +132,33 @@
                         </div>
                         <!-- End portfolio-head -->
                         <div class="portfolio-content">
-                            <h5 class="title">Chamado 0001</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                            <h5 class="title"> <td> ${itemReq.titulo}</td><br> </h5>
+                           
+            <td> ID: REQ${itemReq.id}</td><br>                
+            <td> Status: ${itemReq.status}</td><br> 
+            <td> Prioridade: ${itemReq.prioridade}</td><br>          
+            <td> Data: ${itemReq.data}</td><br>   
+            <td> Categoria: ${itemReq.categoria}</td><br>   
+            <td> Subcategoria: ${itemReq.subcategoria}</td><br>                           
+            <td> Descrição: ${itemReq.descricao}</td><br> 
+            
                         </div>
                         <!-- End portfolio-content -->
                     </div>
                     <!-- End portfolio-item -->
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                               
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0002</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                           
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0003</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
+                </c:forEach>
+              
+            </form>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                               
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0004</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                               
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0005</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                                
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0006</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
+               
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                               
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0007</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                                
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0008</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
-                    <div class="portfolio-one">
-                        <div class="portfolio-head">
-                            <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
-                            <div class="portfolio-hover">                              
-                            </div>
-                        </div>
-                        <!-- End portfolio-head -->
-                        <div class="portfolio-content">
-                            <h5 class="title">Chamado 0009</h5>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
-                        <!-- End portfolio-content -->
-                    </div>
-                    <!-- End portfolio-item -->
-                </div>
+                
             </div>
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination pagination-lg justify-content-end">
-                            <li class="page-item">
-                                <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Próximo</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
+               
             </div>
 
         </div>

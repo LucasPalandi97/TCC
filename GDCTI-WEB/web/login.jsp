@@ -85,9 +85,7 @@
                                     <button type="submit" class="btn">Entrar!</button>
                                 </form>
 
-                            </div>
-                        </div>
-
+                        
                         </section>
 
 

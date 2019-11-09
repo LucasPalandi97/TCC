@@ -78,7 +78,7 @@
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="IncRegistration">
+                <form id="main-contact-form" class="contact-form" name="contact-form2" method="post" action="IncRegistration">
                     <div class="col-sm-5 col-sm-offset-1">
                        
 						<div class="form-group">
@@ -100,7 +100,7 @@
 						<div class="form-group">
                             <label>Categoria *</label>
 
-							<select name="catOpt2" id="catOpt" class="form-control" required="required">
+							<select name="catOpt" id="catOpt" class="form-control" required="required">
 							
 							<option value="Hardware">Hardware</option>
 							<option value="Software">Software</option>
@@ -113,7 +113,7 @@
 						<div class="form-group">
                             <label>Subcategoria *</label>
 
-							<select name="subcatOpt2" id="subcatOpt2" class="form-control" required="required">
+							<select name="subcatOpt" id="subcatOpt2" class="form-control" required="required">
 							
 							<option value="Conexão de internet/wi-fi">Conexão de internet/wi-fi</option>
 							<option value="Telefone">Telefone</option>
@@ -129,13 +129,13 @@
 						
 						<div class="form-group">
                             <label>Prioridade *</label>
-                            <select nome="priOpt2" id="priOpt2" class="form-control" required="required">
+                            <select nome="priOpt" id="priOpt2" class="form-control" required="required">
 							
-							<option value="1">Muito alta</option>
-							<option value="2">Alta</option>
-							<option value="3">Média</option>
-							<option value="4">Baixa</option>
-							<option value="5"selected>Muito baixa</option>
+							<option value=1>Muito alta</option>
+							<option value=2>Alta</option>
+							<option value=3>Média</option>
+							<option value=4>Baixa</option>
+                                                        <option value=5 selected>Muito baixa</option>
 							</select>
 							
                         </div>

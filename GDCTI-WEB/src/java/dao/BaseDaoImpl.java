@@ -9,9 +9,13 @@ package dao;
  *
  * @author lucas
  */
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.Transaction;
 import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
@@ -72,7 +76,7 @@ public class BaseDaoImpl implements BaseDao {
   if (session != null) {
    try {
     if (req != null) {
-     Integer id = (Integer)session.save(req) ;
+     Integer id = (Integer)session.save(req);
      String tipo = req.getTipo();
      session.beginTransaction().commit();
      msg = "Requisicao #" + tipo + id
@@ -114,4 +118,5 @@ public class BaseDaoImpl implements BaseDao {
   System.out.println("msg:" + msg);
   return msg;
  }
+ 
 }

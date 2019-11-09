@@ -5,6 +5,8 @@
  */
 package controller;
 
+
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -14,7 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDao;
 import dao.BaseDaoImpl;
+import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import org.hibernate.Session;
+
 import pojo.User;
+import util.HibernateUtil;
 
 
 public class RegistrationController extends HttpServlet {
@@ -35,9 +42,11 @@ public class RegistrationController extends HttpServlet {
   response.sendRedirect("userRegistration.jsp");
  }
 
+
  /**
   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
   */
+ 
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   String msg = "Password and Conform Passwords must be same";
   String page = "userRegistration.jsp";
@@ -59,5 +68,7 @@ public class RegistrationController extends HttpServlet {
   request.setAttribute("msg2", msg);
   request.getRequestDispatcher(page).include(request, response);
  }
-
+   
+  
 }
+
