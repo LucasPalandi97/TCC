@@ -76,31 +76,42 @@
                 <h2>Crie o chamado de <span>incidente</span></h2>
                 <p class="subheading">Os campos com * são de preenchimento obrigatório.</p>
             </div>
-            <div class="row contact-wrap">
+           <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form2" method="post" action="IncRegistration">
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="IncRegistration">
                     <div class="col-sm-5 col-sm-offset-1">
-                       
+                        <div class="form-group">
+                            <label>Nome *</label>
+                            <input type="text" name="nameinc" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="emailinc" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="text" name="telefoneinc"class="form-control">
+                        </div>
 						<div class="form-group">
                             <label>Data *</label>
                             <input type="text" name="data" class="form-control" required="required">
-                        </div>
-                     
+                        </div>     
                         <div class="form-group">
-                            <label>Título *</label>
-                            <input type="text" name="titulo" class="form-control" required="required">
-                        </div>
-						<div class="form-group">
                             <label>Número de série (Computadores e Periféricos)</label>
                             <input type="text" name="serie" class="form-control">
                         </div>
+					
+                        </div>	
 						
-						</div>
 						<div class="col-sm-5">
 						<div class="form-group">
+                                                <div class="form-group">
+                            <label>Título *</label>
+                            <input type="text" name="titulo" class="form-control" required="required">
+                              </div>
                             <label>Categoria *</label>
 
-							<select name="catOpt" id="catOpt" class="form-control" required="required">
+							<select id="catOpt2" name="catOpt2" class="form-control" required="required">
 							
 							<option value="Hardware">Hardware</option>
 							<option value="Software">Software</option>
@@ -108,34 +119,34 @@
                                                         <option value="Outros">Outros</option>
 							<option value="" selected></option>
 							</select>
-
-                        </div>
+</div>
+                       
 						<div class="form-group">
                             <label>Subcategoria *</label>
 
-							<select name="subcatOpt" id="subcatOpt2" class="form-control" required="required">
+							<select id="subcatOpt2" name="subcatOpt2" class="form-control" required="required">
 							
 							<option value="Conexão de internet/wi-fi">Conexão de internet/wi-fi</option>
 							<option value="Telefone">Telefone</option>
-							<option value="Quebra de equipamentos">Quebra de equipamentos</option>
-							<option value="Falha de equipamentos">Falha de equipamentos</option>
-							<option value="Erro de autenticação">Erro de autenticação</option>
+							<option value="Dano ou Quebra">Dano ou Quebra</option>
+                                                        <option value="Falha">Falha</option>
+							<option value="Erros">Erros</option>
 							<option value="Impressora">Impressora</option>
-							<option value="Outros">Outros</option>
+                                                        <option value="Outros">Outros</option>
 							<option value="" selected></option>
 							</select>
 
-                        </div>					
+                        </div>
 						
 						<div class="form-group">
                             <label>Prioridade *</label>
-                            <select nome="priOpt" id="priOpt2" class="form-control" required="required">
+                            <select id="priOpt2" name="priOpt2" class="form-control" required="required">
 							
-							<option value=1>Muito alta</option>
-							<option value=2>Alta</option>
-							<option value=3>Média</option>
-							<option value=4>Baixa</option>
-                                                        <option value=5 selected>Muito baixa</option>
+							<option value="Muito alta">Muito alta</option>
+							<option value="Alta">Alta</option>
+							<option value="Média">Média</option>
+							<option value="Baixa">Baixa</option>
+							<option value="Muito baixa"selected>Muito baixa</option>
 							</select>
 							
                         </div>

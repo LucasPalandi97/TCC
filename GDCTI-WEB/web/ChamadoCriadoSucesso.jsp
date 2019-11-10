@@ -9,6 +9,8 @@
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta http-equiv="Content-Language" content="pt-br">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chamado criado</title>
@@ -98,7 +100,7 @@
                                     <%= request.getAttribute("msg2")%>
                                 </p>
                                 <% }%>
-	<p><img src="img/confirmado.png" width=42 height=42>  Chamado <span></span> criado com sucesso!</p>
+	
 	</div>
 	
 	</div>

@@ -108,7 +108,7 @@ public class BaseDaoImpl implements BaseDao {
        + " created successfully...";
     }
    } catch (Exception exception) {
-    System.out.println("Exception occred while reading requisicao data: "
+    System.out.println("Exception occred while reading incidente data: "
       + exception.getMessage());
    }
 

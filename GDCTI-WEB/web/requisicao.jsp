@@ -72,20 +72,32 @@
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="ReqRegistration">
-                    <div class="col-sm-5 col-sm-offset-1">                    
-                	<div class="form-group">
-                            <label>Data *</label>
-                            <input type="text" class="form-control" name="data" required="required">
-                        </div>
-                       
+                    <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
-                            <label>Título *</label>
-                            <input type="text" class="form-control" name="titulo" required="required">
+                            <label>Nome *</label>
+                            <input type="text" name="namereq" class="form-control" >
                         </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="emailreq" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="text" name="telefonereq"class="form-control">
+                        </div>
+						<div class="form-group">
+                            <label>Data *</label>
+                            <input type="text" name="data" class="form-control" required="required">
+                        </div>                     
+					
+                        </div>	
 						
-						</div>
 						<div class="col-sm-5">
 						<div class="form-group">
+                                                <div class="form-group">
+                            <label>Título *</label>
+                            <input type="text" name="titulo" class="form-control" required="required">
+                              </div>
                             <label>Categoria *</label>
 
 							<select id="catOpt" name="catOpt" class="form-control" required="required">
@@ -96,8 +108,8 @@
                                                         <option value="Outros">Outros</option>
 							<option value="" selected></option>
 							</select>
-
-                        </div>
+</div>
+                       
 						<div class="form-group">
                             <label>Subcategoria *</label>
 
@@ -118,11 +130,11 @@
                             <label>Prioridade *</label>
                             <select id="priOpt" name="priOpt" class="form-control" required="required">
 							
-							<option value=1>Muito alta</option>
-							<option value=2>Alta</option>
-							<option value=3>Média</option>
-							<option value=4>Baixa</option>
-							<option value=5 selected>Muito baixa</option>
+							<option value="Muito alta">Muito alta</option>
+							<option value="Alta">Alta</option>
+							<option value="Média">Média</option>
+							<option value="Baixa">Baixa</option>
+							<option value="Muito baixa" selected>Muito baixa</option>
 							</select>
 							
                         </div>
@@ -131,7 +143,7 @@
                             <textarea name="descricao" id="message" required="required" class="form-control" rows="8"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="submit" value="Register Requisicao"class="btn btn-default submit-button">Enviar chamado <i class="fa fa-caret-right"></i></button>
+                            <button type="submit" name="submit" value="Register Requisicao" class="btn btn-default submit-button">Enviar chamado <i class="fa fa-caret-right"></i></button>
                         </div>
                     </div>
                 </form>

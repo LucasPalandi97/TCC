@@ -50,10 +50,10 @@ public class RequisicaoController extends HttpServlet {
    req.setData(request.getParameter("data"));
    req.setCategoria(request.getParameter("catOpt"));
    req.setSubcategoria(request.getParameter("subcatOpt"));
-   req.setPrioridade(Integer.parseInt(request.getParameter("priOpt")));
+   req.setPrioridade(request.getParameter("priOpt"));
    req.setTitulo(request.getParameter("titulo"));
    req.setDescricao(request.getParameter("descricao"));
-   req.setStatus(1);
+   req.setStatus("Em aberto");
    req.setTipo("REQ");
   
   

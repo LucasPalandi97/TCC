@@ -41,13 +41,13 @@ public class IncidenteController extends HttpServlet {
    Incidente inc = new Incidente();
   
    inc.setData(request.getParameter("data"));
-   inc.setCategoria(request.getParameter("catOpt"));
-   inc.setSubcategoria(request.getParameter("subcatOpt"));
-   inc.setPrioridade(Integer.parseInt(request.getParameter("priOpt")));
+   inc.setCategoria(request.getParameter("catOpt2"));
+   inc.setSubcategoria(request.getParameter("subcatOpt2"));
+   inc.setPrioridade(request.getParameter("priOpt2"));
    inc.setTitulo(request.getParameter("titulo"));
    inc.setDescricao(request.getParameter("descricao"));
    inc.setSerie(request.getParameter("serie"));
-   inc.setStatus(1);
+   inc.setStatus("Em aberto");
    inc.setTipo("INC");
   
   

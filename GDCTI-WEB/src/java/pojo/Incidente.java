@@ -11,8 +11,8 @@ public class Incidente {
 
 
     
-    private int id, prioridade, status;
-    private String tipo, data, categoria, subcategoria, titulo, descricao, serie;
+    private int id;
+    private String tipo, data, categoria, subcategoria, titulo, descricao, serie,prioridade, status;
 
     public int getId() {
         return id;
@@ -30,19 +30,19 @@ public class Incidente {
         this.id = id;
     }
 
-    public int getPrioridade() {
+    public String getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(int prioridade) {
+    public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

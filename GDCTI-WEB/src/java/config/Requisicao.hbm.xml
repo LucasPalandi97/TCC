@@ -11,10 +11,10 @@
   <property name="data" column="data" length="45" />
   <property name="categoria" column="categoria" length="45" />
   <property name="subcategoria" column="subcategoria" length="45" />
-  <property name="prioridade" column="prioridade" length="1" />
+  <property name="prioridade" column="prioridade" length="15" />
   <property name="titulo" column="titulo" length="80" />
   <property name="descricao" column="descricao" length="1000" />
-  <property name="status" column="status" length="1" />
+  <property name="status" column="status" length="15" />
 
  
  </class>

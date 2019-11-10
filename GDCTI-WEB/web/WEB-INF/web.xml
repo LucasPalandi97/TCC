@@ -63,6 +63,14 @@
         <servlet-name>ConsultaRequisicao</servlet-name>
         <servlet-class>controller.ConsultaRequisicao</servlet-class>
     </servlet>
+     <servlet-mapping>
+        <servlet-name>ConsultaIncidente</servlet-name>
+        <url-pattern>/consultaIncidente</url-pattern>
+    </servlet-mapping>
+      <servlet>
+        <servlet-name>ConsultaIncidente</servlet-name>
+        <servlet-class>controller.ConsultaIncidente</servlet-class>
+    </servlet>
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

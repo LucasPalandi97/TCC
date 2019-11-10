@@ -14,15 +14,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import pojo.Requisicao;
+import pojo.Incidente;
+
 import util.HibernateUtil;
 
 /**
  *
  * @author lucas
  */
-public class ConsultaRequisicao extends HttpServlet {
-      private static final long serialVersionUID = 1L;
+public class ConsultaIncidente extends HttpServlet{
+    private static final long serialVersionUID = 1L;
       
        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   response.sendRedirect("home.jsp");
@@ -31,20 +32,18 @@ public class ConsultaRequisicao extends HttpServlet {
  }
 
     
-      public ConsultaRequisicao() {
+      public ConsultaIncidente() {
         super();
         // TODO Auto-generated constructor stub
     }
 
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- 
     Session sessao = HibernateUtil.getSession();
-    Criteria crit = sessao.createCriteria(Requisicao.class);
-List<Requisicao> reqList = crit.list();
-request.getSession().setAttribute("list", reqList);
+    Criteria crit = sessao.createCriteria(Incidente.class);
+List<Incidente> incList = crit.list();
+request.getSession().setAttribute("list", incList);
  RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
 rd.forward(request, response);
-     System.out.println(reqList);
+     System.out.println(incList);
 }
-      
 }
