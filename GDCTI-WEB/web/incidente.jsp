@@ -4,7 +4,13 @@
     Author     : lucas
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="org.hibernate.criterion.Restrictions"%>
+<%@page import="org.hibernate.Criteria"%>
+<%@page import="pojo.User"%>
+<%@page import="pojo.User"%>
+<%@page import="util.HibernateUtil"%>
+<%@page import="org.hibernate.Session"%>
 <%
                                     String userName = null;
                                     Cookie[] cookies = request.getCookies();
@@ -19,54 +25,76 @@
                                         response.sendRedirect("login.jsp");
                                     }
                                 %>
+                                <%
+    Session sessao = HibernateUtil.getSession();
+    Criteria crit = sessao.createCriteria(User.class);
+    crit.add(Restrictions.eq("username", userName));
+    List<User> infolist = crit.list();
+    request.getSession().setAttribute("listUser", infolist);
+
+%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Incidente</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/skin.css">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+        <meta http-equiv="Content-Language" content="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Incidente</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/skin.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="./script/index.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="./script/index.js"></script>
 </head>
 
 <body id="wrapper">
 
     <header>
-        <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-                        <a class="navbar-brand" href="#">
-                            <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
-							<div class="boasvindas">
-							<label  value="NomeUser" >Ol√°, <%=userName%><h1></h1></label>
-							</div>
+          <nav class="navbar navbar-inverse">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
+                            <div class="boasvindas">
+
+                                <label  value="NomeUser" >Ol·, <%= userName%><h1></h1></label>
+                            </div>
+                        </div>
+
+                        <div id="navbar" class="collapse navbar-collapse navbar-right">
+
+                            <ul class="nav navbar-nav">
+
+                                <li><a href="home.jsp">InÌcio</a></li>
+                                <li><a href="requisicao.jsp">RequisiÁ„o</a></li>
+                                <li><a href="incidente.jsp">Incidentes</a></li>                                                         
+                                <li><a href="userRegistration.jsp">Cadastrar Usu·rio (ADM)</a></li>
+                                <li><form action="logout" method="post">
+                                        <input style="margin-left: 50%" name="submit" class="btn btn-default submit-button" type="submit" value="Sair">
+                                    </form>				
+                            </ul>
+
+                        </div>
+
                     </div>
-                    <div id="navbar" class="collapse navbar-collapse navbar-right">
-                        <ul class="nav navbar-nav">
-                            
-                            <li><a href="home.jsp">In√≠cio</a></li>
-                            <li><a href="requisicao.jsp">Requisi√ß√£o</a></li>
-                            <li><a href="incidente.jsp">Incidentes</a></li>                   
-                            <li><a href="login.jsp">Sair</a></li>
-                        </ul>
-                    </div>
-                <!--/.nav-collapse -->
-            </div>
-        </nav>
+
+                </div>
+            </nav>
         <!--/.nav-ends -->
     </header>
 
@@ -74,30 +102,32 @@
         <div class="container">
             <div class="section-heading text-center">
                 <h2>Crie o chamado de <span>incidente</span></h2>
-                <p class="subheading">Os campos com * s√£o de preenchimento obrigat√≥rio.</p>
+                <p class="subheading">Os campos com * s„o de preenchimento obrigatÛrio.</p>
             </div>
            <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="IncRegistration">
                     <div class="col-sm-5 col-sm-offset-1">
+                        <c:forEach var="listar" items="${listUser}">
                         <div class="form-group">
-                            <label>Nome *</label>
-                            <input type="text" name="nameinc" class="form-control" >
+                            <label>Nome</label>
+                            <input type="text" name="nameinc" class="form-control" value="${listar.name}"readonly="readonly">
                         </div>
                         <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="emailinc" class="form-control">
+                            <label>Email</label>                         
+                            <input class="form-control"  type="text" name="emailinc"  value="${listar.email}"readonly="readonly">
                         </div>
                         <div class="form-group">
                             <label>Telefone</label>
-                            <input type="text" name="telefoneinc"class="form-control">
+                            <input type="tel" name="telefoneinc"class="form-control"value="${listar.telefone}"readonly="readonly">
                         </div>
-						<div class="form-group">
+                        </c:forEach>
+			<div class="form-group">
                             <label>Data *</label>
-                            <input type="text" name="data" class="form-control" required="required">
+                            <input  type="date" name="data" class="form-control" required="required">
                         </div>     
                         <div class="form-group">
-                            <label>N√∫mero de s√©rie (Computadores e Perif√©ricos)</label>
+                            <label>N˙mero de sÈrie (Computadores e PerifÈricos)</label>
                             <input type="text" name="serie" class="form-control">
                         </div>
 					
@@ -106,7 +136,7 @@
 						<div class="col-sm-5">
 						<div class="form-group">
                                                 <div class="form-group">
-                            <label>T√≠tulo *</label>
+                            <label>TÌtulo *</label>
                             <input type="text" name="titulo" class="form-control" required="required">
                               </div>
                             <label>Categoria *</label>
@@ -126,7 +156,7 @@
 
 							<select id="subcatOpt2" name="subcatOpt2" class="form-control" required="required">
 							
-							<option value="Conex√£o de internet/wi-fi">Conex√£o de internet/wi-fi</option>
+							<option value="Conex„o de internet/wi-fi">Conex„o de internet/wi-fi</option>
 							<option value="Telefone">Telefone</option>
 							<option value="Dano ou Quebra">Dano ou Quebra</option>
                                                         <option value="Falha">Falha</option>
@@ -144,14 +174,14 @@
 							
 							<option value="Muito alta">Muito alta</option>
 							<option value="Alta">Alta</option>
-							<option value="M√©dia">M√©dia</option>
+							<option value="MÈdia">MÈdia</option>
 							<option value="Baixa">Baixa</option>
 							<option value="Muito baixa"selected>Muito baixa</option>
 							</select>
 							
                         </div>
                         <div class="form-group">
-                            <label>Descri√ß√£o da requisi√ß√£o *</label>
+                            <label>DescriÁ„o da requisiÁ„o *</label>
                             <textarea name="descricao" id="message" required="required" class="form-control" rows="8"></textarea>
                         </div>
                         <div class="form-group">

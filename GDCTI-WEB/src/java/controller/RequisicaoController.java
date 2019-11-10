@@ -14,8 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDao;
 import dao.BaseDaoImpl;
+import java.util.List;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import pojo.Requisicao;
+import pojo.User;
+import util.HibernateUtil;
 
 
 
@@ -35,7 +44,9 @@ public class RequisicaoController extends HttpServlet {
   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
   */
  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  response.sendRedirect("requisicao.jsp");
+  HttpSession session = request.getSession();
+        
+
  }
 
  /**
@@ -56,7 +67,7 @@ public class RequisicaoController extends HttpServlet {
    req.setStatus("Em aberto");
    req.setTipo("REQ");
   
-  
+    
    
    System.out.println(req.toString());
    BaseDao baseDao = new BaseDaoImpl();

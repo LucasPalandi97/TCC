@@ -117,11 +117,13 @@
                 <div align="center">
                 </div>
                 <br>
+               
+                <div class="row">
                 <div class="row">
                     <form  method="post">
                         <div align="center">
                             <td align="center"><input  formaction="consultaRequisicao" name="submit" class="btn btn-default submit-button" type="submit" value="Requisições"></td>
-                            <td align="center"><input formaction="consultaIncidente" name="submit" class="btn btn-default submit-button" type="submit" value="Incidentes"></td>  
+                           <td align="center"><input  formaction="consultaIncidente" name="submit" class="btn btn-default submit-button" type="submit" value="Incidentes"></td> 
                         </div>
                         <br>
                         <c:forEach var="item" items="${list}"  > 
@@ -144,8 +146,7 @@
                                         <li><span style="font-weight: bold">Categoria: </span>${item.categoria}</li>
                                         <li><span style="font-weight: bold">Subcategoria: </span>${item.subcategoria}</li>                       
                                         <li><span style="font-weight: bold">Descrição: </span>${item.descricao}</li>
-
-
+                                       
                                     </div>
                                     <!-- End portfolio-content -->
                                 </div>
@@ -155,9 +156,9 @@
 
                     </form>
                 </div>
-
+                
             </div>
-
+</div>
 
 
         </section>

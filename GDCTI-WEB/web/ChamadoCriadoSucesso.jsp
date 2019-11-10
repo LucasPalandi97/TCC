@@ -3,14 +3,29 @@
     Created on : 20/10/2019, 19:30:10
     Author     : lucas
 --%>
-
+<%
+                                    String userName = null;
+                                    Cookie[] cookies = request.getCookies();
+                                    if (cookies != null) {
+                                        for (Cookie cookie : cookies) {
+                                            if (cookie.getName().equals("username")) {
+                                                userName = cookie.getValue();
+                                            }
+                                        }
+                                    }
+                                    if (userName == null) {
+                                        response.sendRedirect("login.jsp");
+                                    }
+                                %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
-    <meta http-equiv="Content-Language" content="pt-br">
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+        <meta http-equiv="Content-Language" content="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chamado criado</title>
@@ -40,7 +55,7 @@
                         <a class="navbar-brand" href="#">
                             <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
 							<div class="boasvindas">
-							<label>Olá, </label>
+							<label>Olá, <%= userName%></label>
 							</div>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">

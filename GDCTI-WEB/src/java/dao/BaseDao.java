@@ -5,7 +5,6 @@
  */
 package dao;
 
-import java.util.List;
 import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;

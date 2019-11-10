@@ -18,6 +18,7 @@ import dao.BaseDao;
 import dao.BaseDaoImpl;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
+import javax.servlet.http.Cookie;
 import org.hibernate.Session;
 
 import pojo.User;
@@ -41,14 +42,13 @@ public class RegistrationController extends HttpServlet {
  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   response.sendRedirect("userRegistration.jsp");
  }
-
-
+        
  /**
   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
   */
  
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  String msg = "Password and Conform Passwords must be same";
+  String msg = "Campos 'Senha' e 'Confirmar Senha' devem ser iguais.";
   String page = "userRegistration.jsp";
   if(request.getParameter("password").equals(request.getParameter("confPassword"))){
    User user = new User();

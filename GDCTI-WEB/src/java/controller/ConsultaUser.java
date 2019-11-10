@@ -51,7 +51,7 @@ public class ConsultaUser extends HttpServlet {
     Session sessao = HibernateUtil.getSession();
     Criteria crit = sessao.createCriteria(User.class);
 List<User> usersList = crit.list();
-request.getSession().setAttribute("list", usersList);
+request.getSession().setAttribute("listUser", usersList);
  RequestDispatcher rd = request.getRequestDispatcher("/userRegistration.jsp");
 rd.forward(request, response);
      System.out.println(usersList);

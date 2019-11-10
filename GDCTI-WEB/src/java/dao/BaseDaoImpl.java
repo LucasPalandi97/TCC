@@ -9,13 +9,7 @@ package dao;
  *
  * @author lucas
  */
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import pojo.Incidente;
 import pojo.Requisicao;
 import pojo.User;
@@ -34,36 +28,36 @@ public class BaseDaoImpl implements BaseDao {
      return true;
     }
    } catch (Exception exception) {
-    System.out.println("Exception occred while reading user data: "
+    System.out.println("Erro Excpetion ao ler data do usuário: "
       + exception.getMessage());
     return false;
    }
 
   } else {
-   System.out.println("DB server down.....");
+   System.out.println("Servidor desconectado.....");
   }
   return false;
  }
 
  @Override
  public String register(User user) {
-  String msg = "Registration unsuccessful, try again.....";
+  String msg = "Registro não concluido, tente de novo.....";
   Session session = HibernateUtil.getSession();
   if (session != null) {
    try {
     if (user != null) {
      String username = (String) session.save(user);
      session.beginTransaction().commit();
-     msg = "User " + username
-       + " created successfully, please login...";
+     msg = "Usuário " + username
+       + " criado com sucesso, porfavor realize o login...";
     }
    } catch (Exception exception) {
-    System.out.println("Exception occred while reading user data: "
+    System.out.println("Erro Exception ao ler dados do usuário: "
       + exception.getMessage());
    }
 
   } else {
-   System.out.println("DB server down.....");
+   System.out.println("Servidor desconectado.....");
   }
   System.out.println("msg:" + msg);
   return msg;
@@ -71,7 +65,7 @@ public class BaseDaoImpl implements BaseDao {
  
  @Override
  public String registerR(Requisicao req) {
-  String msg = "Registration unsuccessful, try again.....";
+  String msg = "Registro não concluido, tente de novo.....";
   Session session = HibernateUtil.getSession();
   if (session != null) {
    try {
@@ -79,16 +73,16 @@ public class BaseDaoImpl implements BaseDao {
      Integer id = (Integer)session.save(req);
      String tipo = req.getTipo();
      session.beginTransaction().commit();
-     msg = "Requisicao #" + tipo + id
-       + " created successfully...";
+     msg = "Requisição #" + tipo + id
+       + " criada com sucesso...";
     }
    } catch (Exception exception) {
-    System.out.println("Exception occred while reading requisicao data: "
+    System.out.println("Erro Exception ao ler dados da requisição: "
       + exception.getMessage());
    }
 
   } else {
-   System.out.println("DB server down.....");
+   System.out.println("Servidor desconectado.....");
   }
   System.out.println("msg:" + msg);
   return msg;
@@ -96,7 +90,7 @@ public class BaseDaoImpl implements BaseDao {
  
   @Override
  public String registerI(Incidente inc) {
-  String msg = "Registration unsuccessful, try again.....";
+  String msg = "Registro não concluido, tente de novo.....";
   Session session = HibernateUtil.getSession();
   if (session != null) {
    try {
@@ -105,15 +99,15 @@ public class BaseDaoImpl implements BaseDao {
      String tipo = inc.getTipo();
      session.beginTransaction().commit();
      msg = "Incidente #" + tipo + id
-       + " created successfully...";
+       + " criado com sucesso...";
     }
    } catch (Exception exception) {
-    System.out.println("Exception occred while reading incidente data: "
+    System.out.println("Erro Exception ao ler dados do incidente: "
       + exception.getMessage());
    }
 
   } else {
-   System.out.println("DB server down.....");
+   System.out.println("Servidor desconectado.....");
   }
   System.out.println("msg:" + msg);
   return msg;
