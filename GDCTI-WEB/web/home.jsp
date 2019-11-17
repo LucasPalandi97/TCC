@@ -32,6 +32,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script src="./script/index.js"></script>
+        <script>
+            function analist_view(){
+                
+                window.location.href = "analistaVisual.jsp";
+            }
+             el = document.getElementById('item');
+el.addEventListener('click', function(e) {
+    alert(e.target.id);
+
+});
+            
+        </script>
     </head>
 
     <body id="wrapper">
@@ -126,11 +138,12 @@
                            <td align="center"><input  formaction="consultaIncidente" name="submit" class="btn btn-default submit-button" type="submit" value="Incidentes"></td> 
                         </div>
                         <br>
+      
                         <c:forEach var="item" items="${list}"  > 
 
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 portfolio-item">
                                 <div class="portfolio-one">
-                                    <div class="portfolio-head">
+                                    <div class="portfolio-head" onclick="analist_view()">
                                         <div class="portfolio-img"><img alt="" src="img/chamados.png"></div>
                                         <div class="portfolio-hover">                               
                                         </div>
@@ -139,13 +152,14 @@
                                     <div class="portfolio-content">
                                         <h5 class="title"> <td> ${item.titulo}</td><br> </h5>
 
-                                        <li><span style="font-weight: bold">Chamado: </span>${item.tipo}${item.id}</li>               
+                                        <li><span style="font-weight: bold">Chamado: </span><a id="idView">${item.tipo}${item.id}</a></li>               
                                         <li><span style="font-weight: bold">Status: </span>${item.status}</li> 
                                         <li><span style="font-weight: bold">Prioridade: </span> ${item.prioridade}</li>       
                                         <li><span style="font-weight: bold">Data: </span>${item.data}</li>   
                                         <li><span style="font-weight: bold">Categoria: </span>${item.categoria}</li>
                                         <li><span style="font-weight: bold">Subcategoria: </span>${item.subcategoria}</li>                       
                                         <li><span style="font-weight: bold">Descrição: </span>${item.descricao}</li>
+                                        <li><span style="font-weight: bold">Usuário: </span>${item.user_username}</li>
                                        
                                     </div>
                                     <!-- End portfolio-content -->

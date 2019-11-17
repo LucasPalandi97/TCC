@@ -15,6 +15,7 @@
   <property name="titulo" column="titulo" length="80" />
   <property name="descricao" column="descricao" length="1000" />
   <property name="status" column="status" length="15" />
+   <property name="user_username" column="user_username" length="20" />
 
  
  </class>

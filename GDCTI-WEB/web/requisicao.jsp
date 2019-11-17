@@ -109,7 +109,7 @@
                         <c:forEach var="listar" items="${listUser}">
                           <div class="form-group">
                                 <label>Nome</label>
-                                <input type="text" name="namereq" class="form-control"value="${listar.name}"readonly="readonly">
+                                <input type="text" name="usernameReq" class="form-control"value="${listar.name}"readonly="readonly">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -141,7 +141,6 @@
                                     <option value="Hardware">Hardware</option>
                                     <option value="Software">Software</option>
                                     <option value="Rede">Rede</option>
-                                    <option value="Outros">Outros</option>
                                     <option value="" selected></option>
                                 </select>
                             </div>

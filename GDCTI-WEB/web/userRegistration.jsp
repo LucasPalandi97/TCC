@@ -10,22 +10,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%
 
-    String userName = null;
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("username")) {
-                userName = cookie.getValue();
-
-            }
-        }
-    }
-    if (userName == null) {
-        response.sendRedirect("login.jsp");
-    }
-%>
 <html>
     <head>
           <meta charset="utf-8">
@@ -58,7 +43,7 @@
                             <a class="navbar-brand" href="#">
                                 <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
                             <div class="boasvindas">
-                                <label  value="NomeUser" >Olá, <%= userName%><h1></h1></label>
+                                <label  value="NomeUser" >Olá<h1></h1></label>
                             </div>
                         </div>
                         <div id="navbar" class="collapse navbar-collapse navbar-right">

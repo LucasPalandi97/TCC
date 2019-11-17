@@ -49,7 +49,7 @@ public class BaseDaoImpl implements BaseDao {
      String username = (String) session.save(user);
      session.beginTransaction().commit();
      msg = "Usuário " + username
-       + " criado com sucesso, porfavor realize o login...";
+       + " criado com sucesso, por favor realize o login...";
     }
    } catch (Exception exception) {
     System.out.println("Erro Exception ao ler dados do usuário: "

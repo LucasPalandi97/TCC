@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDao;
 import dao.BaseDaoImpl;
+import javax.servlet.http.Cookie;
 import pojo.Incidente;
 
 
@@ -37,7 +38,19 @@ public class IncidenteController extends HttpServlet {
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   String msg = null;
   String page = "incidente.jsp";
-  
+  String user_username = null;
+  Cookie[] cookies = request.getCookies();
+
+if (cookies != null) {
+ for (Cookie cookie : cookies) {
+   if (cookie.getName().equals("username")) {
+     //do something
+     //value can be retrieved using #cookie.getValue()
+     user_username = cookie.getValue();
+     
+    }
+  }
+}
    Incidente inc = new Incidente();
   
    inc.setData(request.getParameter("data"));
@@ -47,6 +60,7 @@ public class IncidenteController extends HttpServlet {
    inc.setTitulo(request.getParameter("titulo"));
    inc.setDescricao(request.getParameter("descricao"));
    inc.setSerie(request.getParameter("serie"));
+   inc.setUser_username(user_username);
    inc.setStatus("Em aberto");
    inc.setTipo("INC");
   

@@ -15,7 +15,15 @@ public class Requisicao {
 
     
     private int id;
-    private String tipo, data, categoria, subcategoria, titulo, descricao, prioridade, status;
+    private String tipo, data, categoria, subcategoria, titulo, descricao, prioridade, status, user_username;
+
+    public String getUser_username() {
+        return user_username;
+    }
+
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
+    }
 
     public int getId() {
         return id;
@@ -91,7 +99,7 @@ public class Requisicao {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", tipo=" + tipo + ", data=" + data + ", prioridade= " + prioridade + ", categoria= " + categoria
+        return "Requisicao [id=" + id + ", tipo=" + tipo +", username: " + user_username + ", data=" + data + ", prioridade= " + prioridade + ", categoria= " + categoria
                 + ", subcategoria= " + subcategoria + ", titulo= " + titulo + ", descricao= " + descricao + ", status= " + status + "]";
     }
 }

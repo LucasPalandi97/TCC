@@ -12,7 +12,7 @@ public class Incidente {
 
     
     private int id;
-    private String tipo, data, categoria, subcategoria, titulo, descricao, serie,prioridade, status;
+    private String tipo, data, categoria, subcategoria, titulo, descricao, serie,prioridade, status, user_username;
 
     public int getId() {
         return id;
@@ -28,6 +28,14 @@ public class Incidente {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUser_username() {
+        return user_username;
+    }
+
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
     }
 
     public String getPrioridade() {
@@ -96,7 +104,7 @@ public class Incidente {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", tipo=" + tipo + ", data=" + data + ", prioridade= " + prioridade + ", categoria= " + categoria
+        return "Incidente [id=" + id + ", tipo=" + tipo + ", username: " + user_username + ", data=" + data + ", prioridade= " + prioridade + ", categoria= " + categoria
                 + ", subcategoria= " + subcategoria + ", titulo= " + titulo + ", descricao= " + descricao + ", serie= " + serie + ", status= " + status + "]";
     }
 }

@@ -55,6 +55,19 @@ public class RequisicaoController extends HttpServlet {
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   String msg = null;
   String page = "requisicao.jsp";
+   String user_username = null;
+  Cookie[] cookies = request.getCookies();
+
+if (cookies != null) {
+ for (Cookie cookie : cookies) {
+   if (cookie.getName().equals("username")) {
+     //do something
+     //value can be retrieved using #cookie.getValue()
+     user_username = cookie.getValue();
+     
+    }
+  }
+}
   
    Requisicao req = new Requisicao();
    
@@ -64,6 +77,7 @@ public class RequisicaoController extends HttpServlet {
    req.setPrioridade(request.getParameter("priOpt"));
    req.setTitulo(request.getParameter("titulo"));
    req.setDescricao(request.getParameter("descricao"));
+   req.setUser_username(user_username);
    req.setStatus("Em aberto");
    req.setTipo("REQ");
   

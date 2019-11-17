@@ -111,7 +111,7 @@
                         <c:forEach var="listar" items="${listUser}">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text" name="nameinc" class="form-control" value="${listar.name}"readonly="readonly">
+                            <input type="text" name="usernameinc" class="form-control" value="${listar.name}"readonly="readonly">
                         </div>
                         <div class="form-group">
                             <label>Email</label>                         
@@ -145,8 +145,7 @@
 							
 							<option value="Hardware">Hardware</option>
 							<option value="Software">Software</option>
-							<option value="Rede">Rede</option>
-                                                        <option value="Outros">Outros</option>
+							<option value="Rede">Rede</option>                                                     
 							<option value="" selected></option>
 							</select>
 </div>
@@ -156,7 +155,6 @@
 
 							<select id="subcatOpt2" name="subcatOpt2" class="form-control" required="required">
 							
-							<option value="Conexão de internet/wi-fi">Conexão de internet/wi-fi</option>
 							<option value="Telefone">Telefone</option>
 							<option value="Dano ou Quebra">Dano ou Quebra</option>
                                                         <option value="Falha">Falha</option>
