@@ -4,6 +4,13 @@
     Author     : lucas
 --%>
 
+<%@page import="org.hibernate.criterion.Restrictions"%>
+<%@page import="pojo.Requisicao"%>
+<%@page import="java.util.List"%>
+<%@page import="org.hibernate.Criteria"%>
+<%@page import="pojo.Incidente"%>
+<%@page import="util.HibernateUtil"%>
+<%@page import="org.hibernate.Session"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
                                     String userName = null;
@@ -34,6 +41,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="./script/index.js"></script>
+   
 </head>
 
 <body id="wrapper">
@@ -52,7 +60,7 @@
                         <a class="navbar-brand" href="#">
                             <h1>HELPER</h1><span>GERENCIADOR DE CHAMADOS DE T.I.</span></a>
 							<div class="boasvindas">
-                                                            <label  value="NomeUser" >Olá, <%=userName%><h1></h1></label>
+                                                            <label  value="NomeUser" >Olá, <%= userName%><h1></h1></label>
 							</div>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
@@ -80,6 +88,7 @@
                 <div class="status alert alert-success" style="display: none"></div>
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
                     <div class="col-sm-5 col-sm-offset-1">
+                        
                         <div class="form-group">
                             <label>Nome *</label>
                             <input type="text" name="name" class="form-control" required="required">
@@ -96,10 +105,7 @@
                             <label>Data *</label>
                             <input type="text" class="form-control" required="required">
                         </div>
-                        <div class="form-group">
-                            <label>Setor</label>
-                            <input type="text" class="form-control">
-                        </div>
+                       
 
                         <div class="form-group">
                             <label>Título *</label>
@@ -126,19 +132,21 @@
 
 							<select class="form-control" required="required">
 							
-							<option value="valor1">Compra de equipamento</option>
-							<option value="valor2">Instalação de software</option>
-							<option value="valor3">Realocação de equipamento</option>
+							<option value="valor1">Compra</option>
+							<option value="valor2">Instalação</option>
+							<option value="valor3">Realocação</option>
 							<option value="valor4">Criação de e-mail</option>
-							<option value="valor5">Outros</option>
+                                                        <option value="Telefone">Telefone</option>
+							<option value="Dano ou Quebra">Dano ou Quebra</option>
+                                                        <option value="Falha">Falha</option>
+							<option value="Erros">Erros</option>
+							<option value="Impressora">Impressora</option>
+                                                        <option value="valor5">Outros</option>
 							<option value="valor6" selected></option>
 							</select>
 
                         </div>
-						<div class="form-group">
-                            <label>Outros (Subcategoria) *</label>
-                            <input type="text" name="subject" class="form-control" required="required">
-                        </div>
+						
 						
 						<div class="form-group">
                             <label>Prioridade *</label>
@@ -162,7 +170,7 @@
 						
 						<div class="form-group">
                             <label>Responsável atendimento *</label>
-                            <input type="text" name="name" class="form-control" required="required">
+                            <input type="text" name="name" class="form-control" required="required" value="<%= userName%>"readonly="readonly" >
                         </div>
 						
 						<div class="form-group">

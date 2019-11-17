@@ -37,11 +37,6 @@
                 
                 window.location.href = "analistaVisual.jsp";
             }
-             el = document.getElementById('item');
-el.addEventListener('click', function(e) {
-    alert(e.target.id);
-
-});
             
         </script>
     </head>
