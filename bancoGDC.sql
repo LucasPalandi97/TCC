@@ -1,4 +1,4 @@
-
+drop database gdcti;
 CREATE SCHEMA IF NOT EXISTS gdcti;
 USE gdcti ;
 
@@ -6,16 +6,17 @@ USE gdcti ;
 -- Table gdcti.incidente
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS incidente (
-  id INT(11) NOT NULL,
+  id INT(11) NOT NULL AUTO_INCREMENT,
   tipo VARCHAR(45) NOT NULL,
   data VARCHAR(45) NOT NULL,
   categoria VARCHAR(45) NOT NULL,
   subcategoria VARCHAR(45) NOT NULL,
-  prioridade INT(1) NOT NULL,
+  prioridade VARCHAR(15) NOT NULL,
   titulo VARCHAR(80) NOT NULL,
   descricao VARCHAR(1000) NOT NULL,
   serie VARCHAR(45) NULL DEFAULT NULL,
-  status INT(1) NULL DEFAULT NULL,
+  status VARCHAR(15) NULL DEFAULT NULL,
+  user_username VARCHAR(20) NOT NULL,
   PRIMARY KEY (id));
 
 
@@ -28,10 +29,11 @@ CREATE TABLE IF NOT EXISTS requisicao (
   data VARCHAR(45) NOT NULL,
   categoria VARCHAR(45) NOT NULL,
   subcategoria VARCHAR(45) NOT NULL,
-  prioridade INT(1) NOT NULL,
+  prioridade VARCHAR(15) NOT NULL,
   titulo VARCHAR(80) NOT NULL,
   descricao VARCHAR(1000) NOT NULL,
-  status INT(1) NULL DEFAULT NULL,
+  status VARCHAR(15) NULL DEFAULT NULL,
+  user_username VARCHAR(20) NOT NULL,
   PRIMARY KEY (id));
 
 
@@ -44,8 +46,17 @@ CREATE TABLE IF NOT EXISTS user (
   password VARCHAR(30) NOT NULL,
   funcao VARCHAR(12) NOT NULL,
   email VARCHAR(30) NOT NULL,
-  telefone VARCHAR(14) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
   PRIMARY KEY (username),
   UNIQUE INDEX username_UNIQUE (username ASC) VISIBLE);
-show tables;
-select * from requisicao;
+  
+  
+  
+truncate table user;
+truncate table incidente;
+truncate table requisicao;
+select * from user;
+select * from incidente;
+delete from user;
+delete from incidente;
+delete from requisicao;
